@@ -1,0 +1,9 @@
+def spin_words(sentence):
+    # Your code goes here
+    pro_sentence = []
+    for word in sentence.split():
+        if len(word) > 4:
+            pro_sentence.append(word[::-1])
+        else:
+            pro_sentence.append(word)
+    return " ".join(pro_sentence)
