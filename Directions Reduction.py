@@ -21,6 +21,6 @@ def dirReduc(arr):
            elif i == len(arr) - 2:
             return arr
 
-a = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
+a = ["NORTH"]
 
 print("result: ", dirReduc(a))
