@@ -24,9 +24,9 @@ capitals = {'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
 states = list(capitals.keys())
 ans = 'ABCDE'
 
-for QuizNum in range(1,6):
-    quizfile = open('/home/andrew/capitals_quiz_{:04d}.txt'.format(QuizNum),'w')
-    answfile = open('/home/andrew/capitals_answer_{:04d}.txt'.format(QuizNum),'w')
+for QuizNum in range(1, 30):
+    quizfile = open('/home/andrew/capitals_quiz_{:04d}.txt'.format(QuizNum), 'w')
+    answfile = open('/home/andrew/capitals_answer_{:04d}.txt'.format(QuizNum), 'w')
 
     # Quiz Header
     quizfile.write('\n\nName: ________\n\nDate: ________\n\nPeriod: ________\n\n')
@@ -35,18 +35,18 @@ for QuizNum in range(1,6):
     # Quiz Body
     random.shuffle(states)
 
-    for i,state in enumerate(states,1):
-        quizfile.write('\n{0}. Can you name the capital city of {1}.\n'.format(i,state))
+    for i, state in enumerate(states, 1):
+        quizfile.write('\n{0}. Can you name the capital city of {1}.\n'.format(i, state))
         cityes = list(capitals.values())
         answers = [capitals[state]]
         cityes.remove(answers[0])
-        answers += random.sample(cityes,4)
+        answers += random.sample(cityes, 4)
         for char in ans:
             variant = random.choice(answers)
             answers.remove(variant)
             quizfile.write('\t{0}. {1}\n'.format(char, variant))
             if variant == capitals[state]:
-                answfile.write('{0}. {1} - {2}\n\n'.format(i,char, variant))
+                answfile.write('{0}. {1} - {2}\n\n'.format(i, char, variant))
 
 
 quizfile.close()

@@ -1,6 +1,6 @@
-def primes(low, hight):
+def primes(low, high):
     result = []
-    for i in range(low, hight+1):
+    for i in range(low, high+1):
 
         for x in range(2, i):
             if (i % x) == 0:
